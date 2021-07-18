@@ -1,0 +1,104 @@
+// goodslist: [  ]  	 数组数据 用循环 把数据给页面
+
+//  goodslist: null        对象数据类型 直接用差值表达式	把数据 给页面
+
+
+rules规则：
+ 
+
+
+前置导航守卫： 只有在组件里才可以使用 $nextTick , 在路由里 直接 用  vue.nextTick 
+
+
+懒加载：
+    先把路径加载到 data-src 里面，当页面达到可视区之后会把 data-src这个属性赋值给真正的 src
+
+
+   <router-link to="/newlist" tag="div">：会渲染成 a 样式会乱 标签跳入 newlist页面去， tag="div" 让router-link 变成 div
+	       to="/newlist"	: 声明式跳转  等同于调用  router.push() 跳转
+	       a		：js 跳转是 编程式导航跳转
+
+	router：实现前进和后退的, this.$router.push(),   this.$router.go(),前进或后退 
+	router：获取当前路由的参数(如：查询字符串，查询参数，路由参数)	
+		获取路由参数：this.$route.params.username
+
+
+	this.$route.params.id： 获取 id 参数
+	this.$route.query.username：获取查询字符串 usename
+
+	props：获取参数
+
+
+	
+	add_time:  Date.now()	: 当前是时间
+
+	concat():		 合并字符串
+	trim(): 		去除首位空格
+
+	请求的时候
+		获取不需要 判断 状态码
+		增 删 改 更新  都要判断 status 状态码  
+
+事件：change    click
+
+阻止冒泡   .stop
+	
+	splice():		删除数组中的元素。splice(index,1) ： 删除1个，删除自己。
+	join():		把数组用指定的字符隔 连接成字符串。
+	push():
+	map():		遍历数组 会影响原数组  对数组进行加工用map
+	some():		只有找到以后就会立即停止匹配，就不会循环了。
+	findIndex():	找到元素并返回索引(下标的位置)。
+	
+	===：类型 和 值 全等
+分类获取：
+    第一个children
+	id怎么传： 一定是有事件的  var id = this.items[index].id
+	获取图片分组的id	var id = this.items[index].id
+
+	父通信子： 父 使用 v-bind或 ：绑定事件，子使用 props来接收。
+
+	子通信父：父绑定自定义事件名  @img-click="imgClick"，子使用 $emit
+
+		事件泡沫：默认行为  .stop  阻止默认行为
+
+	分类缓存数据， 第一次请求 第二次用缓存的数据
+		先判断children 里面有没有数据，没有就获取数据
+
+
+商品详情：
+	npm i vuex --svae   或  S  	运行依赖
+
+	
+vuex 的作用：可以实现组建之间的数据共享，数据是响应式的，vuex数据一变化所有依赖都会跟着变化。
+
+加入购物车：  数据加入本地存储	：商品本地存储 把本地商品同步到 vueX里面。
+	1：加入之前要先判断是否有同名的 id的 商品。
+	2：没有： 构造一个购物车商品对象。
+	3：有：就数量累加。
+	4：最后要把购同步在本地存储物车对象。
+
+存入application里本地存储中	// 本地存储中肯能会有购物车商品，要先全部取出来，放在全局共享 state 中
+	
+获取购物车数据 从本地存储获取, 价格一定要从数据库获取，
+	价格  图片  标题 从接口获取。
+	 选中	删除   本地d动态获取 
+	
+    删除只删除当前的：删除商品  调用vueX 中的 mutations 里的方法
+
+
+计算属性：computed：会跟踪他里面的数据变化，只要依赖变化就会更新。
+
+
+登录注册：登录的接口要验证 登录  
+	1：服务端返回token,之后 把token存在本地存储，下次请求的时候通过请求拦截器把 token带过去，判断有没有成功在拦截器这边统一判断状态码 同一请求 统一响应写在一个文件里，其他地方负责调用。
+
+	请求拦截器：请求之前做点事，在请求头把 token 带过去
+		// 设置自定义请求头(authorized - 要求是 https)把 token 带给后台，方便进行后台验证
+	
+	2：每次请求的时候怎么把 token带到后台去
+		一段路验证通过，一段路由不验证
+
+
+	响应拦截器：
+	

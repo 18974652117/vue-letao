@@ -1,0 +1,53 @@
+npm install -g @vue/cli		// 安装脚手架 vue3
+
+npm clean cache --force		// 清除缓存
+
+npm install -g vue/cli
+
+1：vue create	  项目名字
+2 步骤： 	选中3 手动 ：manually select	
+3 步骤： 	选择配置 ：babel,router,vuex   1 2 5 6 7 8 
+4 步骤： 	选择路由    ：y 
+5 步骤：    选择 css处理器  3 ： less
+6 步骤： 	代码检测规范 3 ： Elisnt+ Standard config
+7 步骤：    何时进行检测 ： 1 list on  save 	保存时候检查代码
+8步骤：	配置文件存放位置 1：  In dadicated confing  files 标准配置文件
+9步骤：	是否保存预设的模板   n
+
+1：安装 vant-ui
+npm i vant -S 
+
+配置 babel.cofig.js文件
+module.exports = {
+  presets: [
+    '@vue/cli-plugin-babel/preset'
+  ],
+  plugins: [
+    ['import', {
+      libraryName: 'vant',
+      libraryDirectory: 'es',
+      style: true
+    }, 'vant']
+  ]
+}
+
+安装按需加载的插件
+npm i babel-plugin-import -D
+
+---------------------------------------------------
+安装 element-ui 和 axios
+npm install element-ui axios --save
+
+@  就是代表 src 下的目录
+
+app 跟组件的  <router-view/> 对应的就是路由。
+
+-----------------------------------------------------
+
+
+安装 axios
+    npm install axios -S	// 运行依赖	
+
+-----------------------------------------------------
+
+npm i moment --s

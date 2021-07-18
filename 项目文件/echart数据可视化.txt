@@ -1,0 +1,13 @@
+试图配置项：
+	第一部分：title
+	第二部分：图例
+	第三部分：x轴  y轴   ，以及数据展示
+
+代码实现： 1：引入 echart
+	
+	2：在方法里：对echart初始化的 this.echart = echarts.init(document.gertElmenetById(this.id))
+
+	3：设置图表的配置项和数据
+		1：设置背景颜色，2：设置标题组件
+
+	5：系数列表

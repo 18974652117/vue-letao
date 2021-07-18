@@ -1,0 +1,126 @@
+
+!important			// 提升优先级
+
+&yen		   		// ￥ 人民币符号
+text-decoration: line-through;            	//  钱上面的删除线
+
+/deep/				//  深度选择器 ，会把当前数据里的结构找过来 可以修改样式
+/deep/ *				// 所有元素， 可以修改所有元素样式
+
+margin: 0 auto			// 针对普通文档流
+
+box-shadow: 0 0 10px;           		// 添加阴影 向外扩散 10px
+		
+ box-sizing: border-box; 		// 使用padding后超出边框了，内减	
+	
+		
+ box-shadow: 5px 10px 20px red();   	// 阴影  5px: x偏移量 10px: y偏移量  20px:模糊程度
+
+ outline: none;
+
+ resize: none;
+
+ visibility: hidden;			// 隐藏
+
+  disabled				按钮禁用
+
+  <a href=' javascrip:;'></a> 		//  阻止 a 链接跳转
+
+  border-collapse: collapse;		// 表格之间没有间距
+
+opacity: .5;			// 半透明
+
+z-index: 999;			// 提高层级
+	
+
+list-style: none;
+
+border-collapse: collapse;
+
+vertical-align: middle;   		// 去除图片底部 3px 的间距 
+
+		    字体居中
+ text-align: center;			// 字体水平居中
+ line-height: 100px;			// 字体垂直居中
+
+		     居中
+position: absolute;	             		// 居中
+    left: 50%;        
+    top: 50%;
+    transform: translate(-50%,-50%);  	// 定位后盒子不在中间  使用transform: translate(-50%,-50%); 让盒子到中间去
+
+		      鼠标样式
+cursor: move;			// 鼠标表 十字
+cursor: pointer;			// 鼠标呈现小手形状 
+
+	
+		       定位
+position:sticky;      			// 粘性定位
+position :fixed;			// 固定位     根据窗口进行定位的。
+position :absolute;			// 绝对定位  根据自身最近的定位进行移动，没有定位就根据 窗口定位。
+position :relative;			// 相对定位  相对于自己的位置移动。
+
+
+		      弹性布局
+flex-direction: column;		// 上下对齐（顶部和底部对齐）三个元素要上下排列  纵轴排列。
+flex-wrap: wrap;			// 元素换行
+flex-wrap: wrap;			// 换行
+
+justify-content: space-between;	// 两端对齐
+
+justify-content: center;		// 水平居中		三个元素要左右排列  横轴排列。
+align-items: center;			// 垂直居中
+
+font-weight: 400			// 定义字体的粗细
+
+text-decoration: line-through;            	//  钱上的删除线
+
+		     滚动条
+overflow: hidden; 			// 隐藏滚动条	超出隐藏    // 清除浮动
+overflow: hidden;           		// 图片超出隐藏
+overflow-x: hidden;			// 隐藏 x 轴
+overflow-x: auto;			// 添加 x 轴滚动条
+overflow: visible; 			// 清除左右滑动条	
+overflow-y: scroll;			// 添加滚动条       
+overflow-y:auto;			// 垂直滚动条 
+
+
+		超出文本省略()...:
+overflow: hidden;
+text-overflow: ellipsis;		// 此属性可以设置当文本溢出时将显示省略标记(...)
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+
+		<浏览器兼容问题>
+ -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+
+标题：商品中类 
+  /** 商品中类变手形状 变颜色 */
+      .title{
+        font-size: 16px;
+        line-height: 40px;
+        color: #585858;
+        margin-right: 15px;
+        cursor: pointer;
+        &:hover {
+          color: #c81623;
+        }
+      }
+      /** 修改字体点击后的背景色 */
+      /deep/ .el-tabs__header {
+        margin: 0 0 8px;
+      }
+      /** 选中后字体变大 */
+      /deep/ .is-active {
+        font-size: 16px;
+        color: #c81623;
+      }
+      /** 选中后下划线背景色 */
+      /deep/.el-tabs__active-bar{
+        background-color:#c81623;
+      }

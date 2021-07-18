@@ -1,0 +1,6 @@
+ created(){},	// 把数据挂载到 指定的容器里  获取不到真实 dom
+	如果要在  created 里获取 获取真实 dom 通过 this.$nextTick(function(){}) ,传一个函数，只有挂载真实 dom之后才执行传入的函数
+	$nextTick：是个 异步函数，只有虚拟dom 挂载到真实 dom 之后才会触发回调。
+
+
+  mounted(){},	// 虚拟dom 挂载到真实dom之后 才可以操作 dom

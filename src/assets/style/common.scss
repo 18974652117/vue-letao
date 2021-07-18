@@ -1,0 +1,7 @@
+.titles{
+  overflow: hidden;
+  text-overflow: ellipsis;		// 此属性可以设置当文本溢出时将显示省略标记(...)
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
